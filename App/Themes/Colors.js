@@ -7,6 +7,7 @@ const colors = {
   tabs: '#e8e8e8',
   darktext: '#333333',
   lighttxt: '#b7b7b7',
+  icon_active: '#555',
 };
 
 export default colors;

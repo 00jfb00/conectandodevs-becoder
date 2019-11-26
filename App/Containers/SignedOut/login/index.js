@@ -102,25 +102,15 @@ class Login extends Component {
       // StatusBar.setTranslucent(true);
     }
 
-    let pic = {
-      uri:
-        'http://antiqueruby.aliansoftware.net/Images/signin/homescreensthirteen.png',
-    };
-
-    let logo13 = {
-      uri:
-        'http://antiqueruby.aliansoftware.net/Images/signin/ic_logo_mountifysthirteen.png',
-    };
-
     return (
-      <ImageBackground source={pic} style={styles.screenBg}>
+      <ImageBackground source={Images.pic} style={styles.screenBg}>
         <Header style={styles.header} />
         <View style={styles.container}>
-          <Image source={logo13} style={styles.logostyle} />
+          <Image source={Images.logo} style={styles.logostyle} />
 
-          <Text style={styles.headertext}>BeCoder</Text>
+          {/* <Text style={styles.headertext}>BeCoder</Text> */}
 
-          <Text style={styles.desctext}>Versão {version}</Text>
+          {/* <Text style={styles.desctext}>Versão {version}</Text> */}
 
           <Form style={styles.form}>
             <TouchableOpacity

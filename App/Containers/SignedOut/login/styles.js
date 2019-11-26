@@ -42,9 +42,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   logostyle: {
+    marginTop: '15%',
+    resizeMode: "center",
     alignSelf: 'center',
-    width: Metrics.WIDTH * 0.4,
-    height: Metrics.WIDTH * 0.3,
   },
   headertext: {
     fontFamily: 'OpenSans-Bold',
