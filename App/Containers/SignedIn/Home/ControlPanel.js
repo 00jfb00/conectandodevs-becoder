@@ -8,8 +8,8 @@ import {StackActions, NavigationActions} from 'react-navigation';
 import {Fonts, Images, Colors} from '../../../Themes/';
 
 class ControlPanel extends Component {
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.authData.type === 'LOGOUT') {
+  componentDidUpdate(prevProps) {
+    if (this.props.authData.type === 'LOGOUT') {
       const resetAction = StackActions.reset({
         index: 0,
         key: null,
@@ -137,17 +137,6 @@ class ControlPanel extends Component {
             </Text>
           </TouchableOpacity>
         </Content>
-        <Image
-          source={Images.logoAgv}
-          resizeMode="contain"
-          style={{
-            height: 40,
-            width: 120,
-            position: 'absolute',
-            bottom: 15,
-            right: 0,
-          }}
-        />
       </Container>
     );
   }

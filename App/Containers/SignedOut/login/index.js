@@ -42,8 +42,8 @@ class Login extends Component {
     SplashScreen.hide();
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.authData.type === 'LOGIN') {
+  componentDidUpdate(prevProps) {
+    if (this.props.authData.type === 'LOGIN') {
       const resetAction = StackActions.reset({
         index: 0,
         key: null,

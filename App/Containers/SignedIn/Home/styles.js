@@ -3,20 +3,24 @@ import {Fonts, Metrics, Colors} from '../../../Themes/';
 export default {
   container: {
     flex: 1,
-    backgroundColor: 'rgba(240,240,240, 1)',
+    backgroundColor: 'rgba(255,255,255, 1)',
   },
   main: {
     flex: 1,
-    backgroundColor: 'rgba(240,240,240, 1)',
+    backgroundColor: 'rgba(255,255,255, 1)',
   },
   header: {
-    backgroundColor: 'rgba(240,240,240, 1)',
+    backgroundColor: 'rgba(255,255,255, 1)',
     height: Metrics.HEIGHT * 0.1,
     borderBottomWidth: 0,
     paddingTop: Metrics.HEIGHT * 0.03,
     elevation: 0,
     paddingLeft: Metrics.WIDTH * 0.05,
     paddingRight: Metrics.WIDTH * 0.05,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    zIndex: 9999,
   },
   left: {
     flex: 0.5,
@@ -45,8 +49,7 @@ export default {
   },
   body: {
     flex: 1,
-    backgroundColor: 'rgba(240,240,240, 1)',
-    padding: 20,
+    backgroundColor: 'rgba(255,255,255, 1)',
   },
 
   /*DRAWER START*/
@@ -60,14 +63,13 @@ export default {
     padding: 10,
     paddingLeft: 40,
     paddingTop: 40,
-    marginBottom: Metrics.HEIGHT * 0.15,
   },
   profileContainer: {
     paddingTop: Fonts.moderateScale(30),
     paddingBottom: Fonts.moderateScale(10),
     flexDirection: 'column',
     justifyContent: 'space-between',
-    backgroundColor: Colors.primary,
+    backgroundColor: Colors.tertiary,
   },
   profileBody: {
     flexDirection: 'row',
@@ -80,7 +82,7 @@ export default {
     width: Metrics.HEIGHT * 0.14,
     borderRadius: Metrics.HEIGHT * 0.07,
     borderWidth: 3,
-    borderColor: Colors.secondary,
+    borderColor: Colors.primary,
   },
   name: {
     fontFamily: 'OpenSans-Regular',

@@ -161,10 +161,10 @@ const LoggedInStackMain = createBottomTabNavigator(
             iconName = 'home';
             break;
           case 'Desafios':
-            iconName = 'home';
+            iconName = 'trophy';
             break;
           case 'Ranking':
-            iconName = 'home';
+            iconName = 'graph';
             break;
           default:
             iconName = 'circle';
@@ -177,17 +177,17 @@ const LoggedInStackMain = createBottomTabNavigator(
             type="SimpleLineIcons"
             style={{color: tintColor, fontSize: focused ? 22 : 18}}
             sizeBadge={focused ? 18 : 16}
-            size={focused ? 22 : 18}
+            size={focused ? 24 : 20}
             color={tintColor}
           />
         );
       },
     }),
     tabBarOptions: {
-      activeTintColor: '#fff',
-      inactiveTintColor: Colors.drawer,
-      activeBackgroundColor: Colors.primary,
-      inactiveBackgroundColor: Colors.primary,
+      activeTintColor: Colors.primary,
+      inactiveTintColor: Colors.darktext,
+      activeBackgroundColor: Colors.tabs,
+      inactiveBackgroundColor: Colors.tabs,
     },
   },
 );

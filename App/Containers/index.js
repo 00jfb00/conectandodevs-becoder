@@ -7,13 +7,13 @@ import {isLoggedUser, getLoggedUser} from '../Services/user';
 import {loginInformation} from '../Reducer/auth/actions';
 
 class Session extends Component {
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.authData.type === 'LOGIN') {
+  componentDidUpdate(prevProps) {
+    if (this.props.authData.type === 'LOGIN') {
       this.changeRoot('signedInStack');
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.getUserData();
   }
 

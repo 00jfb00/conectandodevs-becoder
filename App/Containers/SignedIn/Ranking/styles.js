@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     fontSize: Fonts.moderateScale(25),
   },
   header: {
-    backgroundColor: 'rgba(240,240,240, 1)',
+    backgroundColor: 'rgba(255,255,255, 1)',
     height: Metrics.HEIGHT * 0.08,
     borderBottomWidth: 0,
     paddingTop: 0,
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   },
   body: {
     flex: 1,
-    backgroundColor: 'rgba(240,240,240, 1)',
+    backgroundColor: 'rgba(255,255,255, 1)',
   },
 });
 
