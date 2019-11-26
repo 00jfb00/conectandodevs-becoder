@@ -5,18 +5,9 @@ import {
   TouchableOpacity,
   Dimensions,
   StatusBar,
-  Image,
+  FlatList,
 } from 'react-native';
-import {
-  Container,
-  Icon,
-  Right,
-  Header,
-  Left,
-  Body,
-  Content,
-  Spinner,
-} from 'native-base';
+import {Container, Icon, Content, Text} from 'native-base';
 import {connect} from 'react-redux';
 import Drawer from 'react-native-drawer';
 import MyControlPanel from './ControlPanel';
@@ -54,6 +45,26 @@ class Home extends Component {
       tapToClose: true,
       negotiatePan: false,
       side: 'right',
+      courses: [
+        {
+          id: 1,
+          name: 'Curso de PHP',
+          tag: 'PHP',
+          status: 0,
+        },
+        {
+          id: 2,
+          name: 'Curso de MySQL',
+          tag: 'MYSQL',
+          status: 1,
+        },
+        {
+          id: 3,
+          name: 'Curso de ReactJS',
+          tag: 'REACTJS',
+          status: 3,
+        },
+      ],
     };
   }
 
@@ -117,14 +128,63 @@ class Home extends Component {
           side={this.state.side}>
           <View style={styles.main}>
             <Content style={styles.body}>
-              <View style={{ position: 'absolute', top: 30, right: 30, zIndex: 9999999 }}>
-                <TouchableOpacity style={{ backgroundColor: Colors.tertiary, borderRadius: 22, width: 44, height: 44, justifyContent: 'center', alignContent: 'center', alignItems: 'center' }} onPress={() => this.openDrawer()}>
-                  <Icon name="ios-menu" style={styles.headerIcon} />
+              <View style={styles.headerIconContainer}>
+                <TouchableOpacity
+                  style={styles.headerIconButton}
+                  onPress={() => this.openDrawer()}>
+                  <Icon
+                    name="menu"
+                    type="SimpleLineIcons"
+                    style={styles.headerIcon}
+                  />
                 </TouchableOpacity>
               </View>
-              <View style={{ width: '100%', height: Dimensions.get('window').height * 0.4, backgroundColor: 'white' }}>
-                <Carousel />
+              <View
+                style={{
+                  width: '100%',
+                  height: Dimensions.get('window').height * 0.4,
+                  backgroundColor: 'white',
+                }}>
+                <Carousel
+                  images={[
+                    'https://s-media-cache-ak0.pinimg.com/originals/ee/51/39/ee5139157407967591081ee04723259a.png',
+                    'https://s-media-cache-ak0.pinimg.com/originals/40/4f/83/404f83e93175630e77bc29b3fe727cbe.jpg',
+                    'https://s-media-cache-ak0.pinimg.com/originals/8d/1a/da/8d1adab145a2d606c85e339873b9bb0e.jpg',
+                  ]}
+                />
               </View>
+              <FlatList
+                horizontal
+                ListHeaderComponent={(<View><Text>Trilha</Text></View>)}
+                keyExtractor={item => `item-${item.id}`}
+                data={this.state.courses}
+                renderItem={({item}) => (
+                  <View
+                    style={{
+                      backgroundColor: 'red',
+                      width: 150,
+                      height: 150,
+                      margin: 20,
+                    }}
+                  />
+                )}
+              />
+              <FlatList
+                horizontal
+                ListHeaderComponent={(<View><Text>Cursos Ganhos</Text></View>)}
+                keyExtractor={item => `item-${item.id}`}
+                data={this.state.courses}
+                renderItem={({item}) => (
+                  <View
+                    style={{
+                      backgroundColor: 'blue',
+                      width: 150,
+                      height: 150,
+                      margin: 20,
+                    }}
+                  />
+                )}
+              />
             </Content>
           </View>
         </Drawer>
