@@ -3,7 +3,7 @@ import {
   View,
   Platform,
   TouchableOpacity,
-  Text,
+  Dimensions,
   StatusBar,
   Image,
 } from 'react-native';
@@ -23,6 +23,7 @@ import MyControlPanel from './ControlPanel';
 import tweens from './tweens';
 import styles from './styles';
 import {Fonts, Images, Colors, Metrics} from '../../../Themes/';
+import Carousel from '../../../Components/Carousel';
 
 const drawerStyles = {
   drawer: {
@@ -115,22 +116,16 @@ class Home extends Component {
           changeVal={this.state.changeVal}
           side={this.state.side}>
           <View style={styles.main}>
-            <Header style={styles.header}>
-              <Left style={styles.left} />
-              <Body style={styles.headerBody}>
-                <Image
-                  source={Images.logoAgv}
-                  resizeMode="contain"
-                  style={{height: 45}}
-                />
-              </Body>
-              <Right style={styles.right}>
-                <TouchableOpacity onPress={() => this.openDrawer()}>
+            <Content style={styles.body}>
+              <View style={{ position: 'absolute', top: 30, right: 30, zIndex: 9999999 }}>
+                <TouchableOpacity style={{ backgroundColor: Colors.tertiary, borderRadius: 22, width: 44, height: 44, justifyContent: 'center', alignContent: 'center', alignItems: 'center' }} onPress={() => this.openDrawer()}>
                   <Icon name="ios-menu" style={styles.headerIcon} />
                 </TouchableOpacity>
-              </Right>
-            </Header>
-            <Content style={styles.body} />
+              </View>
+              <View style={{ width: '100%', height: Dimensions.get('window').height * 0.4, backgroundColor: 'white' }}>
+                <Carousel />
+              </View>
+            </Content>
           </View>
         </Drawer>
       </Container>
