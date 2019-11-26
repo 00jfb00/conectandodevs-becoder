@@ -1,0 +1,14 @@
+{
+  "translation": {
+    "logout": "Logout",
+    "comment": "Comment...",
+    "login": "Login",
+    "username": "Username",
+    "password": "Password",
+    "discover": "Discover",
+    "help": "Help",
+    "settings": "Settings",
+    "report_a_problem": "Report a problem",
+    "language": "Language"
+  }
+}
