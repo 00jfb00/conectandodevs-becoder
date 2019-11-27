@@ -37,32 +37,6 @@ class ControlPanel extends Component {
         </View>
         <Content style={styles.menumainview}>
           <View style={{height: 70}} />
-          <TouchableOpacity
-            style={{
-              flexDirection: 'row',
-              marginBottom: 20,
-              alignItems: 'center',
-            }}>
-            <Icon
-              name="history"
-              type="MaterialCommunityIcons"
-              style={{
-                color: Colors.darktext,
-                fontSize: Fonts.moderateScale(30),
-                marginRight: 10,
-              }}
-            />
-            <Text
-              numberOfLines={1}
-              elipseMode="tails"
-              style={{
-                color: Colors.darktext,
-                fontSize: Fonts.moderateScale(14),
-                fontFamily: 'OpenSans-Regular',
-              }}>
-              Histórico de pontos
-            </Text>
-          </TouchableOpacity>
 
           <TouchableOpacity
             onPress={() => {
@@ -95,6 +69,9 @@ class ControlPanel extends Component {
           </TouchableOpacity>
 
           <TouchableOpacity
+						onPress={() => {
+							this.props.navigation.navigate('Empresas');
+						}}
             style={{
               flexDirection: 'row',
               marginBottom: 20,
