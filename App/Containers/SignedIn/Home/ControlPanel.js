@@ -28,7 +28,9 @@ class ControlPanel extends Component {
           </View>
           <View>
             <Text numberOfLines={1} elipseMode="tails" style={styles.name}>
-              {this.props.user && this.props.user.user ? this.props.user.user.name : ''}
+              {this.props.user && this.props.user.user
+                ? this.props.user.user.name
+                : ''}
             </Text>
             <View style={styles.itemViewPoints}>
               <Icon
@@ -82,9 +84,9 @@ class ControlPanel extends Component {
           </TouchableOpacity>
 
           <TouchableOpacity
-						onPress={() => {
-							this.props.navigation.navigate('Empresas');
-						}}
+            onPress={() => {
+              this.props.navigation.navigate('Empresas');
+            }}
             style={{
               flexDirection: 'row',
               marginBottom: 20,

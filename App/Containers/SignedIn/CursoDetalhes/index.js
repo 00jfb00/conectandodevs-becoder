@@ -19,7 +19,9 @@ class Page extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      course: !props.navigation.state.params ? {} : props.navigation.state.params,
+      course: !props.navigation.state.params
+        ? {}
+        : props.navigation.state.params,
       index: 0,
       routes: [
         {key: 'description', title: 'Descrição'},
@@ -78,12 +80,12 @@ class Page extends Component {
         ]}
         renderItem={({item}) => (
           <TouchableOpacity
-            onPress={() =>
-              this.props.navigation.navigate('Conteudo', {
-                url:
-                  'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
-              })
-            }
+            // onPress={() =>
+            //   this.props.navigation.navigate('Conteudo', {
+            //     url:
+            //       'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
+            //   })
+            // }
             style={{paddingTop: 20}}>
             <View style={{flexDirection: 'row'}}>
               <View>
@@ -123,18 +125,18 @@ class Page extends Component {
 
     return (
       <Container style={styles.main}>
-        <View style={styles.headerIconContainer}>
-          <TouchableOpacity
-            style={styles.headerIconButton}
-            onPress={() => this.props.navigation.goBack()}>
-            <Icon
-              name="chevron-down"
-              type="MaterialCommunityIcons"
-              style={styles.headerIcon}
-            />
-          </TouchableOpacity>
-        </View>
         <Content style={styles.body}>
+          <View style={styles.headerIconContainer}>
+            <TouchableOpacity
+              style={styles.headerIconButton}
+              onPress={() => this.props.navigation.goBack()}>
+              <Icon
+                name="chevron-down"
+                type="MaterialCommunityIcons"
+                style={styles.headerIcon}
+              />
+            </TouchableOpacity>
+          </View>
           <View
             style={{
               justifyContent: 'center',
