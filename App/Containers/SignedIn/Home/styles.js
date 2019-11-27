@@ -75,14 +75,30 @@ export default {
     marginTop: Metrics.HEIGHT * 0.004,
     textAlign: 'center',
   },
-  level: {
-    fontFamily: 'OpenSans-Bold',
-    fontWeight: 'bold',
-    fontSize: Fonts.moderateScale(20),
+  itemViewPoints:{
+    flexDirection:'row',
+    marginTop: 4,
+    justifyContent: 'center'
+  },
+  itemIcon:{
     color: Colors.darktext,
-    backgroundColor: 'transparent',
-    marginTop: Metrics.HEIGHT * 0.004,
-    textAlign: 'center',
+    fontSize: Fonts.moderateScale(14),
+    marginRight: 5,
+    marginTop: 2,
+  },
+  itemPoints: {
+    color: '#555',
+    fontSize: 14,
+  },
+  itemIconRanking:{
+    color: Colors.darktext,
+    fontSize: Fonts.moderateScale(19),
+    marginRight: 5,
+    marginTop: 4,
+  },
+  itemRanking: {
+    color: '#555',
+    fontSize: 20,
   },
   /*DRAWER END*/
 };
