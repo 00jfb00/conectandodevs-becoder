@@ -35,12 +35,7 @@ export default class App extends Component {
 
     return (
       <View style={{flex: 1}} onLayout={this._onLayoutDidChange}>
-        <Carousel
-          delay={8000}
-          style={this.state.size}
-          autoplay
-          bullets
-          onAnimateNextPage={p => console.log(p)}>
+        <Carousel delay={8000} style={this.state.size} autoplay bullets>
           {imageArray}
         </Carousel>
       </View>

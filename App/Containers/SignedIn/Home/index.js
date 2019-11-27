@@ -31,7 +31,7 @@ class Home extends Component {
     super(props);
     this.state = {
       drawerType: 'static',
-      openDrawerOffset: 50,
+      openDrawerOffset: 0.35,
       closedDrawerOffset: 0,
       panOpenMask: 0.1,
       relativeDrag: false,
@@ -86,12 +86,6 @@ class Home extends Component {
         },
       ],
     };
-  }
-
-  setDrawerType(type) {
-    this.setState({
-      drawerType: type,
-    });
   }
 
   tweenHandler(ratio) {
@@ -188,6 +182,7 @@ class Home extends Component {
                 data={this.state.courses}
                 renderItem={({item, index}) => (
                   <CourseCard
+                    navigate={this.props.navigation.navigate}
                     item={item}
                     index={index}
                     hasMargin={index < this.state.courses.length - 1}
@@ -210,6 +205,7 @@ class Home extends Component {
                 data={this.state.courses}
                 renderItem={({item, index}) => (
                   <CourseCard
+                    navigate={this.props.navigation.navigate}
                     item={item}
                     index={index}
                     alwaysOpen={true}

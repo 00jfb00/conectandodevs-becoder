@@ -38,7 +38,7 @@ export default {
   /*DRAWER START*/
   menuContainer: {
     backgroundColor: Colors.drawer,
-    width: Metrics.WIDTH * 0.9,
+    width: Metrics.WIDTH * 0.65,
     height: Metrics.HEIGHT,
     paddingBottom: Fonts.moderateScale(40),
   },
@@ -69,8 +69,17 @@ export default {
   },
   name: {
     fontFamily: 'OpenSans-Regular',
+    fontSize: Fonts.moderateScale(16),
+    color: Colors.darktext,
+    backgroundColor: 'transparent',
+    marginTop: Metrics.HEIGHT * 0.004,
+    textAlign: 'center',
+  },
+  level: {
+    fontFamily: 'OpenSans-Bold',
+    fontWeight: 'bold',
     fontSize: Fonts.moderateScale(20),
-    color: '#fff',
+    color: Colors.darktext,
     backgroundColor: 'transparent',
     marginTop: Metrics.HEIGHT * 0.004,
     textAlign: 'center',

@@ -80,6 +80,7 @@ class Login extends Component {
 
         if (res.status === 200) {
           token = res.data.token;
+          userdata = res.data.user;
           this.props.loginInformation({token: token, user: userdata});
           this.setState({isLoading: false});
         } else {

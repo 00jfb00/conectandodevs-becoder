@@ -5,10 +5,11 @@ import {Icon, Text} from 'native-base';
 
 export default class App extends Component {
   render() {
-    const {item, alwaysOpen = false, hasMargin} = this.props;
+    const {item, alwaysOpen = false, hasMargin, navigate} = this.props;
     return (
       <TouchableOpacity
         disabled={item.status === 1 && !alwaysOpen}
+        onPress={() => navigate('CursoDetalhes', item)}
         style={{
           backgroundColor: '#f5f5f5',
           width: 200,
@@ -38,6 +39,7 @@ export default class App extends Component {
             }}>
             {((alwaysOpen && item.status === 2) || !alwaysOpen) && (
               <TouchableOpacity
+                disabled={item.status === 2}
                 style={{
                   width: 30,
                   height: 30,
