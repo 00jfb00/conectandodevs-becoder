@@ -28,54 +28,31 @@ class ControlPanel extends Component {
           </View>
           <View>
             <Text numberOfLines={1} elipseMode="tails" style={styles.name}>
-              {this.props.user.name}
+              {this.props.user.user.name}
+            </Text>
+            <Text numberOfLines={1} elipseMode="tails" style={styles.level}>
+              Nível 1
             </Text>
           </View>
         </View>
         <Content style={styles.menumainview}>
-          <TouchableOpacity style={{flexDirection: 'row', marginBottom: 20}}>
-            <Text
-              numberOfLines={1}
-              elipseMode="tails"
-              style={{
-                color: Colors.darktext,
-                fontSize: Fonts.moderateScale(18),
-                fontFamily: 'OpenSans-Regular',
-              }}>
-              Nível 1
-            </Text>
-          </TouchableOpacity>
-
           <View style={{height: 70}} />
-          <TouchableOpacity style={{flexDirection: 'row', marginBottom: 20}}>
-            <Icon
-              name="questioncircleo"
-              type="AntDesign"
-              style={{
-                color: Colors.darktext,
-                fontSize: Fonts.moderateScale(32),
-                marginRight: 10,
-              }}
-            />
-            <Text
-              numberOfLines={1}
-              elipseMode="tails"
-              style={{
-                color: Colors.darktext,
-                fontSize: Fonts.moderateScale(20),
-                fontFamily: 'OpenSans-Regular',
-              }}>
-              Histórico de pontos
-            </Text>
-          </TouchableOpacity>
 
-          <TouchableOpacity style={{flexDirection: 'row', marginBottom: 20}}>
+          <TouchableOpacity
+            onPress={() => {
+              this.props.navigation.navigate('Cursos');
+            }}
+            style={{
+              flexDirection: 'row',
+              marginBottom: 20,
+              alignItems: 'center',
+            }}>
             <Icon
-              name="questioncircleo"
-              type="AntDesign"
+              name="book-open-page-variant"
+              type="MaterialCommunityIcons"
               style={{
                 color: Colors.darktext,
-                fontSize: Fonts.moderateScale(32),
+                fontSize: Fonts.moderateScale(26),
                 marginRight: 10,
               }}
             />
@@ -84,20 +61,28 @@ class ControlPanel extends Component {
               elipseMode="tails"
               style={{
                 color: Colors.darktext,
-                fontSize: Fonts.moderateScale(20),
+                fontSize: Fonts.moderateScale(14),
                 fontFamily: 'OpenSans-Regular',
               }}>
               Cursos
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={{flexDirection: 'row', marginBottom: 20}}>
+          <TouchableOpacity
+						onPress={() => {
+							this.props.navigation.navigate('Empresas');
+						}}
+            style={{
+              flexDirection: 'row',
+              marginBottom: 20,
+              alignItems: 'center',
+            }}>
             <Icon
-              name="questioncircleo"
-              type="AntDesign"
+              name="account-network"
+              type="MaterialCommunityIcons"
               style={{
                 color: Colors.darktext,
-                fontSize: Fonts.moderateScale(32),
+                fontSize: Fonts.moderateScale(30),
                 marginRight: 10,
               }}
             />
@@ -106,7 +91,7 @@ class ControlPanel extends Component {
               elipseMode="tails"
               style={{
                 color: Colors.darktext,
-                fontSize: Fonts.moderateScale(20),
+                fontSize: Fonts.moderateScale(14),
                 fontFamily: 'OpenSans-Regular',
               }}>
               Empresas
@@ -115,13 +100,17 @@ class ControlPanel extends Component {
 
           <TouchableOpacity
             onPress={() => this.props.logoutInformation()}
-            style={{flexDirection: 'row', marginBottom: 20}}>
+            style={{
+              flexDirection: 'row',
+              marginBottom: 20,
+              alignItems: 'center',
+            }}>
             <Icon
-              name="logout"
-              type="AntDesign"
+              name="logout-variant"
+              type="MaterialCommunityIcons"
               style={{
                 color: Colors.darktext,
-                fontSize: Fonts.moderateScale(32),
+                fontSize: Fonts.moderateScale(30),
                 marginRight: 10,
               }}
             />
@@ -130,7 +119,7 @@ class ControlPanel extends Component {
               elipseMode="tails"
               style={{
                 color: Colors.darktext,
-                fontSize: Fonts.moderateScale(20),
+                fontSize: Fonts.moderateScale(14),
                 fontFamily: 'OpenSans-Regular',
               }}>
               Sair
