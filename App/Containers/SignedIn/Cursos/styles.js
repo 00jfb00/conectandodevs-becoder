@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent:'center',
     paddingLeft:7,
+    marginLeft:8,
   },
   itemTitle: {
     color: '#555',
