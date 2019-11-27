@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   BackHandler,
   FlatList,
+  Image,
 } from 'react-native';
 import {
   Container,
@@ -23,7 +24,37 @@ import {
 } from 'native-base';
 import {connect} from 'react-redux';
 import styles from './styles';
-import {Colors, Metrics} from '../../../Themes';
+import {Colors, Metrics, Images} from '../../../Themes';
+
+const DATA = [
+  {
+    id: 1,
+    name: 'Plus-IT Consulting',
+    image:
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFIKFT5gCpJMZFUwwsy2An-e13ie0oiKZytVFLpHcMURRzmDjDrA&s',
+  },
+  {
+    id: 2,
+    name: 'Rocketseat',
+    tag: 'JAVA',
+    from: 'Plus-IT Consulting',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFIKFT5gCpJMZFUwwsy2An-e13ie0oiKZytVFLpHcMURRzmDjDrA&s',
+    status: 0,
+  },
+  {
+    id: 3,
+    name: 'Kroton Educacional',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFIKFT5gCpJMZFUwwsy2An-e13ie0oiKZytVFLpHcMURRzmDjDrA&s',
+  },
+  {
+    id: 4,
+    name: 'CIEE',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFIKFT5gCpJMZFUwwsy2An-e13ie0oiKZytVFLpHcMURRzmDjDrA&s',
+  },
+];
 
 class Page extends Component {
   constructor(props) {
@@ -35,6 +66,26 @@ class Page extends Component {
     BackHandler.addEventListener('hardwareBackPress', function() {
       return true;
     });
+  }
+
+  renderItem(item) {
+    return (
+      <TouchableOpacity
+        style={styles.item}
+        onPress={() => this.props.navigation.navigate('EmpresaDetalhes', item)}>
+        <View style={{flexDirection: 'row'}}>
+          <View style={styles.itemBlockImage}>
+            <Image source={{uri: item.image}} style={styles.profileImage} />
+          </View>
+          <View style={styles.itemBlockText}>
+            <Text style={styles.itemTitle}>{item.name}</Text>
+            <View style={styles.itemViewPoints}>
+              <Text style={styles.itemPoints}>{item.from}</Text>
+            </View>
+          </View>
+        </View>
+      </TouchableOpacity>
+    );
   }
 
   render() {
@@ -94,10 +145,12 @@ class Page extends Component {
           </Right>
         </Header>
         <Content style={styles.body}>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate('CursoDetalhes')}>
-            <Text>AQUI</Text>
-          </TouchableOpacity>
+          <FlatList
+            style={{marginTop: 5}}
+            data={DATA}
+            renderItem={({item}) => this.renderItem(item)}
+            keyExtractor={item => item.id}
+          />
         </Content>
       </Container>
     );

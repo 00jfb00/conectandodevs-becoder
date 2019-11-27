@@ -30,13 +30,15 @@ class Page extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      desafio: {
-        title: 'Consultas de mídia social',
-        description:
-          'Sua tarefa é implementar a função: ' +
-          '\nSocialNetworkQueries#findPotentialLikes({ minimalScore })\n' +
-          'de acordo com os requisitos e fazer os testes passarem. \n\nPara o usuário atual SocialNetworkQueries#findPotentialLikes({ minimalScore }) deve retornar um resolvido Promise com um objeto contendo uma matriz sob bookschave. Esse conjunto deve incluir títulos de livros considerados possíveis gostos. Se um livro é um potencial como esse, significa que há uma chance do usuário gostar desse título também, porque é apreciado por alguns de seus amigos.',
-      },
+      desafio: props.navigation.state.params
+        ? props.navigation.state.params
+        : {
+            name: 'Consultas de mídia social',
+            description:
+              'Sua tarefa é implementar a função: ' +
+              '\nSocialNetworkQueries#findPotentialLikes({ minimalScore })\n' +
+              'de acordo com os requisitos e fazer os testes passarem. \n\nPara o usuário atual SocialNetworkQueries#findPotentialLikes({ minimalScore }) deve retornar um resolvido Promise com um objeto contendo uma matriz sob bookschave. Esse conjunto deve incluir títulos de livros considerados possíveis gostos. Se um livro é um potencial como esse, significa que há uma chance do usuário gostar desse título também, porque é apreciado por alguns de seus amigos.',
+          },
     };
   }
 
@@ -72,7 +74,7 @@ class Page extends Component {
           <Right style={styles.headerRight} />
         </Header>
         <Content style={styles.body}>
-          <View style={{ paddingBottom: 100 }}>
+          <View style={{paddingBottom: 100}}>
             <Text
               style={{
                 color: Colors.darktext,
@@ -80,7 +82,7 @@ class Page extends Component {
                 fontWeight: 'bold',
                 fontSize: Fonts.moderateScale(20),
               }}>
-              {this.state.desafio.title}
+              {this.state.desafio.name}
             </Text>
             <Text
               style={{
@@ -93,7 +95,15 @@ class Page extends Component {
             </Text>
           </View>
         </Content>
-        <View style={{ position: 'absolute', bottom: 0, left: 0, zIndex: 9999, width: '100%', padding: 20 }}>
+        <View
+          style={{
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            zIndex: 9999,
+            width: '100%',
+            padding: 20,
+          }}>
           <Item
             style={{
               justifyContent: 'center',
