@@ -30,13 +30,26 @@ class ControlPanel extends Component {
             <Text numberOfLines={1} elipseMode="tails" style={styles.name}>
               {this.props.user.user.name}
             </Text>
-            <Text numberOfLines={1} elipseMode="tails" style={styles.level}>
-              Nível 1
-            </Text>
+            <View style={styles.itemViewPoints}>
+              <Icon
+                name="flag-checkered"
+                type="FontAwesome"
+                style={styles.itemIcon}
+              />
+              <Text style={styles.itemPoints}>1500 pontos</Text>
+            </View>
+            <View style={styles.itemViewPoints}>
+              <Icon
+                name="trophy"
+                type="FontAwesome"
+                style={styles.itemIconRanking}
+              />
+              <Text style={styles.itemRanking}>1º</Text>
+            </View>
           </View>
         </View>
         <Content style={styles.menumainview}>
-          <View style={{height: 70}} />
+          <View style={{height: 20}} />
 
           <TouchableOpacity
             onPress={() => {
