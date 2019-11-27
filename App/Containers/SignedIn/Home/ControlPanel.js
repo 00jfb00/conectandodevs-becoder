@@ -28,7 +28,7 @@ class ControlPanel extends Component {
           </View>
           <View>
             <Text numberOfLines={1} elipseMode="tails" style={styles.name}>
-              {this.props.user.user.name}
+              {this.props.user && this.props.user.user ? this.props.user.user.name : ''}
             </Text>
             <View style={styles.itemViewPoints}>
               <Icon

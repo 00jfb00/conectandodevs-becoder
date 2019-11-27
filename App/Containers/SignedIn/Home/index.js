@@ -171,6 +171,7 @@ class Home extends Component {
                   style={{
                     color: Colors.darktext,
                     fontFamily: 'OpenSans-Bold',
+                    fontWeight: 'bold',
                     fontSize: Fonts.moderateScale(14),
                   }}>
                   Sua Trilha
@@ -194,6 +195,7 @@ class Home extends Component {
                   style={{
                     color: Colors.darktext,
                     fontFamily: 'OpenSans-Bold',
+                    fontWeight: 'bold',
                     fontSize: Fonts.moderateScale(14),
                   }}>
                   Seus Prêmios

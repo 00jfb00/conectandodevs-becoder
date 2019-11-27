@@ -9,11 +9,7 @@ import {
   FlatList,
   Image,
 } from 'react-native';
-import {
-  Container,
-  Content,
-  Icon
-} from 'native-base';
+import {Container, Content, Icon} from 'native-base';
 import {connect} from 'react-redux';
 import styles from './styles';
 import {Fonts, Metrics, Images, Colors} from '../../../Themes/';
@@ -120,7 +116,7 @@ class Page extends Component {
   renderItem(item) {
     return (
       <View style={styles.item}>
-        <View style={{flexDirection:'row'}}>
+        <View style={{flexDirection: 'row'}}>
           <View style={styles.itemBlockImage}>
             <Image source={Images.avatar} style={styles.profileImage} />
           </View>
@@ -133,7 +129,7 @@ class Page extends Component {
                 style={styles.itemIcon}
               />
               <Text style={styles.itemPoints}>{item.points} pontos</Text>
-            </View>            
+            </View>
           </View>
           <View style={styles.itemBlockRanking}>
             <View style={styles.itemPosition}>
@@ -144,7 +140,7 @@ class Page extends Component {
       </View>
     );
   }
-  
+
   render() {
     StatusBar.setBarStyle('dark-content', true);
     if (Platform.OS === 'android') {
@@ -154,14 +150,11 @@ class Page extends Component {
     return (
       <Container style={styles.main}>
         <Content style={styles.body}>
-        <FlatList
-          style={{marginTop:4}}
-          data={DATA}
-          renderItem={({ item }) => 
-            this.renderItem(item)          
-          }
-          keyExtractor={item => item.id}
-        />
+          <FlatList
+            data={DATA}
+            renderItem={({item}) => this.renderItem(item)}
+            keyExtractor={item => item.id}
+          />
         </Content>
       </Container>
     );
