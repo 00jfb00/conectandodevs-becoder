@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
     fontSize: Fonts.moderateScale(25),
   },
   header: {
-    backgroundColor: 'rgba(255,255,255, 1)',
     height: Metrics.HEIGHT * 0.08,
     borderBottomWidth: 0,
     paddingTop: 0,
@@ -40,6 +39,72 @@ const styles = StyleSheet.create({
   body: {
     flex: 1,
     backgroundColor: 'rgba(255,255,255, 1)',
+  },
+  item: {
+    backgroundColor: '#EEE',
+    height: 70,
+    borderRadius: 5,
+    marginHorizontal: 6,    
+    marginBottom: 8,
+    elevation: 3,
+  },
+  itemBlockImage:{
+    width: '16%',
+    height: 70,  
+    alignItems:'flex-start', 
+    justifyContent:'center',
+    marginLeft: 5
+  },
+  profileImage: {
+    height: Metrics.HEIGHT * 0.10,
+    width: Metrics.HEIGHT * 0.10,
+    borderRadius: Metrics.HEIGHT * 0.05,
+    borderWidth: 3,
+    borderColor: Colors.primary,
+  },
+  itemBlockText:{
+    width: '66%',
+    flexDirection: 'column',
+    justifyContent:'center',
+    paddingLeft:7,
+  },
+  itemTitle: {
+    color: '#555',
+    fontSize: 16,    
+    marginTop:5,
+    fontWeight: 'bold'
+  },
+  itemViewPoints:{
+    flexDirection:'row',
+    marginTop: 4,
+  },
+  itemIcon:{
+    color: Colors.darktext,
+    fontSize: Fonts.moderateScale(14),
+    marginRight: 5,
+    marginTop: 2,
+  },
+  itemPoints: {
+    color: '#555',
+    fontSize: 14,
+  },
+  itemBlockRanking:{
+    width: '16%',
+    height: 70, 
+    justifyContent:'center',
+  },
+  itemPosition: {
+    height: Metrics.HEIGHT * 0.10,
+    width: Metrics.HEIGHT * 0.10,
+    borderRadius: Metrics.HEIGHT * 0.05,
+    borderWidth: 3,
+    borderColor: '#0AA',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  itemPositionText:{
+    color: '#555',
+    fontSize: 20,
   },
 });
 
