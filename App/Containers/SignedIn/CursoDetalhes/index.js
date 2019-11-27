@@ -135,6 +135,35 @@ class Page extends Component {
           </TouchableOpacity>
         </View>
         <Content style={styles.body}>
+          <View
+            style={{
+              justifyContent: 'center',
+              alignItems: 'center',
+              alignContent: 'center',
+              position: 'absolute',
+              zIndex: 999,
+              top: 20,
+              right: 0,
+              height: 40,
+              paddingLeft: 20,
+              paddingRight: 20,
+              maxWidth: Metrics.WIDTH * 0.7,
+              backgroundColor: 'rgba(33,35,174,0.8)',
+            }}>
+            <Text
+              adjustsFontSizeToFit={true}
+              allowFontScaling={true}
+              numberOfLines={1}
+              style={{
+                color: 'white',
+                fontFamily: 'OpenSans-Bold',
+                textAlign: 'center',
+                fontWeight: 'bold',
+                fontSize: Fonts.moderateScale(18),
+              }}>
+              {this.state.course.tag}
+            </Text>
+          </View>
           <Image
             source={{uri: this.state.course.image}}
             style={{width: '100%', height: Metrics.HEIGHT * 0.4}}
