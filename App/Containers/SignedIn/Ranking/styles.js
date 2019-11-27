@@ -56,17 +56,18 @@ const styles = StyleSheet.create({
     marginLeft: 5
   },
   profileImage: {
-    height: Metrics.HEIGHT * 0.10,
-    width: Metrics.HEIGHT * 0.10,
-    borderRadius: Metrics.HEIGHT * 0.05,
+    height: Metrics.HEIGHT * 0.08,
+    width: Metrics.HEIGHT * 0.08,
+    borderRadius: Metrics.HEIGHT * 0.04,
     borderWidth: 3,
     borderColor: Colors.primary,
   },
   itemBlockText:{
-    width: '66%',
+    width: '60%',
     flexDirection: 'column',
     justifyContent:'center',
     paddingLeft:7,
+    marginLeft:7,
   },
   itemTitle: {
     color: '#555',
@@ -94,9 +95,9 @@ const styles = StyleSheet.create({
     justifyContent:'center',
   },
   itemPosition: {
-    height: Metrics.HEIGHT * 0.10,
-    width: Metrics.HEIGHT * 0.10,
-    borderRadius: Metrics.HEIGHT * 0.05,
+    height: Metrics.HEIGHT * 0.08,
+    width: Metrics.HEIGHT * 0.08,
+    borderRadius: Metrics.HEIGHT * 0.04,
     borderWidth: 3,
     borderColor: '#0AA',
     justifyContent: 'center',
