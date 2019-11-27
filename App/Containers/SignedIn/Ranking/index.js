@@ -155,6 +155,7 @@ class Page extends Component {
       <Container style={styles.main}>
         <Content style={styles.body}>
         <FlatList
+          style={{marginTop:4}}
           data={DATA}
           renderItem={({ item }) => 
             this.renderItem(item)          
