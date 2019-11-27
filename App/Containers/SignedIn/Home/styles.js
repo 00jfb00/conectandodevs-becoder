@@ -16,7 +16,7 @@ export default {
     fontSize: Fonts.moderateScale(24),
   },
   headerIconButton: {
-    backgroundColor: Colors.tertiary,
+    backgroundColor: 'white',
     borderRadius: 22,
     width: 44,
     height: 44,
