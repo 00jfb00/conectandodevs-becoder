@@ -19,7 +19,13 @@ import reducers from '../Reducer/';
 
 import Home from '../Containers/SignedIn/Home';
 import Desafios from '../Containers/SignedIn/Desafios';
+import DesafioSubmissao from '../Containers/SignedIn/DesafioSubmissao';
 import Ranking from '../Containers/SignedIn/Ranking';
+import Empresas from '../Containers/SignedIn/Empresas';
+import EmpresaDetalhes from '../Containers/SignedIn/EmpresaDetalhes';
+import Cursos from '../Containers/SignedIn/Cursos';
+import CursoDetalhes from '../Containers/SignedIn/CursoDetalhes';
+import Conteudo from '../Containers/SignedIn/Conteudo';
 
 import Login from '../Containers/SignedOut/login';
 import SignUp from '../Containers/SignedOut/signUp';
@@ -31,10 +37,14 @@ import {Colors} from '../Themes';
 const HomeStack = createStackNavigator(
   {
     Home: {screen: Home},
-    Desafios: {screen: Desafios},
-    Ranking: {screen: Ranking},
+    Empresas: {screen: Empresas},
+    EmpresaDetalhes: {screen: EmpresaDetalhes},
+    Cursos: {screen: Cursos},
+    CursoDetalhes: {screen: CursoDetalhes},
+    Conteudo: {screen: Conteudo},
   },
   {
+    mode: 'card',
     headerMode: 'none',
     initialRouteName: 'Home',
     initialRouteKey: 'Home',
@@ -57,6 +67,7 @@ const HomeStack = createStackNavigator(
 const DesafiosStack = createStackNavigator(
   {
     Desafios: {screen: Desafios},
+    DesafioSubmissao: {screen: DesafioSubmissao},
   },
   {
     headerMode: 'none',
@@ -161,10 +172,10 @@ const LoggedInStackMain = createBottomTabNavigator(
             iconName = 'home';
             break;
           case 'Desafios':
-            iconName = 'home';
+            iconName = 'trophy';
             break;
           case 'Ranking':
-            iconName = 'home';
+            iconName = 'graph';
             break;
           default:
             iconName = 'circle';
@@ -177,17 +188,17 @@ const LoggedInStackMain = createBottomTabNavigator(
             type="SimpleLineIcons"
             style={{color: tintColor, fontSize: focused ? 22 : 18}}
             sizeBadge={focused ? 18 : 16}
-            size={focused ? 22 : 18}
+            size={focused ? 24 : 20}
             color={tintColor}
           />
         );
       },
     }),
     tabBarOptions: {
-      activeTintColor: '#fff',
-      inactiveTintColor: Colors.drawer,
-      activeBackgroundColor: Colors.primary,
-      inactiveBackgroundColor: Colors.primary,
+      activeTintColor: Colors.primary,
+      inactiveTintColor: Colors.darktext,
+      activeBackgroundColor: Colors.tabs,
+      inactiveBackgroundColor: Colors.tabs,
     },
   },
 );

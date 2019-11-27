@@ -60,12 +60,12 @@ export const setLoggedUser = async obj => {
 
 export const _login = async obj => {
   return new Promise((resolve, reject) => {
-    resolve({status: 200, data: {name: 'Teste da Silva'}});
+    resolve({status: 200, data: {user: {name: 'Teste da Silva'}}});
   });
 };
 
 export const _getUserData = async token => {
   return new Promise((resolve, reject) => {
-    resolve({status: 200, data: {name: 'Teste da Silva'}});
+    resolve({status: 200, data: {user: {name: 'Teste da Silva'}}});
   });
 };

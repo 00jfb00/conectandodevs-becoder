@@ -42,8 +42,8 @@ class Login extends Component {
     SplashScreen.hide();
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.authData.type === 'LOGIN') {
+  componentDidUpdate(prevProps) {
+    if (this.props.authData.type === 'LOGIN') {
       const resetAction = StackActions.reset({
         index: 0,
         key: null,
@@ -80,6 +80,7 @@ class Login extends Component {
 
         if (res.status === 200) {
           token = res.data.token;
+          userdata = res.data.user;
           this.props.loginInformation({token: token, user: userdata});
           this.setState({isLoading: false});
         } else {
@@ -102,26 +103,11 @@ class Login extends Component {
       // StatusBar.setTranslucent(true);
     }
 
-    let pic = {
-      uri:
-        'http://antiqueruby.aliansoftware.net/Images/signin/homescreensthirteen.png',
-    };
-
-    let logo13 = {
-      uri:
-        'http://antiqueruby.aliansoftware.net/Images/signin/ic_logo_mountifysthirteen.png',
-    };
-
     return (
-      <ImageBackground source={pic} style={styles.screenBg}>
+      <ImageBackground source={Images.pic} style={styles.screenBg}>
         <Header style={styles.header} />
         <View style={styles.container}>
-          <Image source={logo13} style={styles.logostyle} />
-
-          <Text style={styles.headertext}>BeCoder</Text>
-
-          <Text style={styles.desctext}>Versão {version}</Text>
-
+          <Image source={Images.logo} style={styles.logostyle} />
           <Form style={styles.form}>
             <TouchableOpacity
               info

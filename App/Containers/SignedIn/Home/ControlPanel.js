@@ -8,8 +8,8 @@ import {StackActions, NavigationActions} from 'react-navigation';
 import {Fonts, Images, Colors} from '../../../Themes/';
 
 class ControlPanel extends Component {
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.authData.type === 'LOGOUT') {
+  componentDidUpdate(prevProps) {
+    if (this.props.authData.type === 'LOGOUT') {
       const resetAction = StackActions.reset({
         index: 0,
         key: null,
@@ -28,32 +28,46 @@ class ControlPanel extends Component {
           </View>
           <View>
             <Text numberOfLines={1} elipseMode="tails" style={styles.name}>
-              {this.props.user.name}
+              {this.props.user && this.props.user.user
+                ? this.props.user.user.name
+                : ''}
             </Text>
+            <View style={styles.itemViewPoints}>
+              <Icon
+                name="flag-checkered"
+                type="FontAwesome"
+                style={styles.itemIcon}
+              />
+              <Text style={styles.itemPoints}>1500 pontos</Text>
+            </View>
+            <View style={styles.itemViewPoints}>
+              <Icon
+                name="trophy"
+                type="FontAwesome"
+                style={styles.itemIconRanking}
+              />
+              <Text style={styles.itemRanking}>1º</Text>
+            </View>
           </View>
         </View>
         <Content style={styles.menumainview}>
-          <TouchableOpacity style={{flexDirection: 'row', marginBottom: 20}}>
-            <Text
-              numberOfLines={1}
-              elipseMode="tails"
-              style={{
-                color: Colors.darktext,
-                fontSize: Fonts.moderateScale(18),
-                fontFamily: 'OpenSans-Regular',
-              }}>
-              Nível 1
-            </Text>
-          </TouchableOpacity>
+          <View style={{height: 20}} />
 
-          <View style={{height: 70}} />
-          <TouchableOpacity style={{flexDirection: 'row', marginBottom: 20}}>
+          <TouchableOpacity
+            onPress={() => {
+              this.props.navigation.navigate('Cursos');
+            }}
+            style={{
+              flexDirection: 'row',
+              marginBottom: 20,
+              alignItems: 'center',
+            }}>
             <Icon
-              name="questioncircleo"
-              type="AntDesign"
+              name="book-open-page-variant"
+              type="MaterialCommunityIcons"
               style={{
                 color: Colors.darktext,
-                fontSize: Fonts.moderateScale(32),
+                fontSize: Fonts.moderateScale(26),
                 marginRight: 10,
               }}
             />
@@ -62,42 +76,28 @@ class ControlPanel extends Component {
               elipseMode="tails"
               style={{
                 color: Colors.darktext,
-                fontSize: Fonts.moderateScale(20),
-                fontFamily: 'OpenSans-Regular',
-              }}>
-              Histórico de pontos
-            </Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={{flexDirection: 'row', marginBottom: 20}}>
-            <Icon
-              name="questioncircleo"
-              type="AntDesign"
-              style={{
-                color: Colors.darktext,
-                fontSize: Fonts.moderateScale(32),
-                marginRight: 10,
-              }}
-            />
-            <Text
-              numberOfLines={1}
-              elipseMode="tails"
-              style={{
-                color: Colors.darktext,
-                fontSize: Fonts.moderateScale(20),
+                fontSize: Fonts.moderateScale(14),
                 fontFamily: 'OpenSans-Regular',
               }}>
               Cursos
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={{flexDirection: 'row', marginBottom: 20}}>
+          <TouchableOpacity
+            onPress={() => {
+              this.props.navigation.navigate('Empresas');
+            }}
+            style={{
+              flexDirection: 'row',
+              marginBottom: 20,
+              alignItems: 'center',
+            }}>
             <Icon
-              name="questioncircleo"
-              type="AntDesign"
+              name="account-network"
+              type="MaterialCommunityIcons"
               style={{
                 color: Colors.darktext,
-                fontSize: Fonts.moderateScale(32),
+                fontSize: Fonts.moderateScale(30),
                 marginRight: 10,
               }}
             />
@@ -106,7 +106,7 @@ class ControlPanel extends Component {
               elipseMode="tails"
               style={{
                 color: Colors.darktext,
-                fontSize: Fonts.moderateScale(20),
+                fontSize: Fonts.moderateScale(14),
                 fontFamily: 'OpenSans-Regular',
               }}>
               Empresas
@@ -115,13 +115,17 @@ class ControlPanel extends Component {
 
           <TouchableOpacity
             onPress={() => this.props.logoutInformation()}
-            style={{flexDirection: 'row', marginBottom: 20}}>
+            style={{
+              flexDirection: 'row',
+              marginBottom: 20,
+              alignItems: 'center',
+            }}>
             <Icon
-              name="logout"
-              type="AntDesign"
+              name="logout-variant"
+              type="MaterialCommunityIcons"
               style={{
                 color: Colors.darktext,
-                fontSize: Fonts.moderateScale(32),
+                fontSize: Fonts.moderateScale(30),
                 marginRight: 10,
               }}
             />
@@ -130,24 +134,13 @@ class ControlPanel extends Component {
               elipseMode="tails"
               style={{
                 color: Colors.darktext,
-                fontSize: Fonts.moderateScale(20),
+                fontSize: Fonts.moderateScale(14),
                 fontFamily: 'OpenSans-Regular',
               }}>
               Sair
             </Text>
           </TouchableOpacity>
         </Content>
-        <Image
-          source={Images.logoAgv}
-          resizeMode="contain"
-          style={{
-            height: 40,
-            width: 120,
-            position: 'absolute',
-            bottom: 15,
-            right: 0,
-          }}
-        />
       </Container>
     );
   }
