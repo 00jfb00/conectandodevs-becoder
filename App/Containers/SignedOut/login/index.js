@@ -107,11 +107,6 @@ class Login extends Component {
         <Header style={styles.header} />
         <View style={styles.container}>
           <Image source={Images.logo} style={styles.logostyle} />
-
-          {/* <Text style={styles.headertext}>BeCoder</Text> */}
-
-          {/* <Text style={styles.desctext}>Versão {version}</Text> */}
-
           <Form style={styles.form}>
             <TouchableOpacity
               info
