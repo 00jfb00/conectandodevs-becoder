@@ -19,7 +19,7 @@ class Page extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      course: props.navigation.state.params,
+      course: !props.navigation.state.params ? {} : props.navigation.state.params,
       index: 0,
       routes: [
         {key: 'description', title: 'Descrição'},
