@@ -193,7 +193,6 @@ class Home extends Component {
                       shadowOpacity: 0.4,
                       borderColor: Colors.lighttxt,
                       overflow: 'hidden',
-                      position: 'relative',
                       borderWidth: 2,
                       borderRadius: 5,
                     }}>
@@ -204,7 +203,7 @@ class Home extends Component {
                         top: 10,
                         right: 0,
                         height: 20,
-                        width: 'auto',
+                        width: 100,
                         maxWidth: 200,
                         backgroundColor: 'green',
                       }}
