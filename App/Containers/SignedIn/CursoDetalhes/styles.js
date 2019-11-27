@@ -12,6 +12,21 @@ const styles = StyleSheet.create({
     color: Colors.darktext,
     fontSize: Fonts.moderateScale(25),
   },
+  headerIconButton: {
+    backgroundColor: 'white',
+    borderRadius: 22,
+    width: 44,
+    height: 44,
+    justifyContent: 'center',
+    alignContent: 'center',
+    alignItems: 'center',
+  },
+  headerIconContainer: {
+    position: 'absolute',
+    top: 30,
+    left: 30,
+    zIndex: 9999999,
+  },
   header: {
     backgroundColor: 'rgba(255,255,255, 1)',
     height: Metrics.HEIGHT * 0.08,

@@ -79,10 +79,10 @@ class Page extends Component {
 
   renderItem(item) {
     return (
-      <TouchableOpacity 
+      <TouchableOpacity
         style={styles.item}
-        onPress={() => this.props.navigation.navigate('CursoDetalhes')}>
-        <View style={{flexDirection:'row'}}>
+        onPress={() => this.props.navigation.navigate('CursoDetalhes', item)}>
+        <View style={{flexDirection: 'row'}}>
           <View style={styles.itemBlockImage}>
             <Image source={{uri: item.image}} style={styles.profileImage} />
           </View>
@@ -90,7 +90,7 @@ class Page extends Component {
             <Text style={styles.itemTitle}>{item.name}</Text>
             <View style={styles.itemViewPoints}>
               <Text style={styles.itemPoints}>{item.from}</Text>
-            </View>            
+            </View>
           </View>
         </View>
       </TouchableOpacity>
@@ -159,11 +159,9 @@ class Page extends Component {
             <Text>AQUI</Text>
           </TouchableOpacity> */}
           <FlatList
-            style={{marginTop:5}}
+            style={{marginTop: 5}}
             data={DATA}
-            renderItem={({ item }) => 
-              this.renderItem(item)          
-            }
+            renderItem={({item}) => this.renderItem(item)}
             keyExtractor={item => item.id}
           />
         </Content>
