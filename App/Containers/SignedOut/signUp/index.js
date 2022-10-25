@@ -28,7 +28,7 @@ class Page extends Component {
     this.state = {};
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     BackHandler.addEventListener('hardwareBackPress', function() {
       return true;
     });
